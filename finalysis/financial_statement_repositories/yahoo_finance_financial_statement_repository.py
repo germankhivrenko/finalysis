@@ -63,8 +63,4 @@ class YahooFinanceFinancialStatementRepository:
                 output_items.append(item_df)
 
         result = pd.concat(output_items)
-
-        if ITEM_KEYS.REVENUE in result.index:
-            return result[result.columns[::-1]].dropna(axis=1, subset=[ITEM_KEYS.REVENUE])
-
-        return result[result.columns[::-1]]
+        return result.sort_index(axis=1)

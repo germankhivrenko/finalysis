@@ -4,5 +4,5 @@ from collections.abc import Sequence
 
 
 class FinancialStatementRepository(Protocol):
-    def retreive(self, ticker: str, item_keys: Sequence[str]) -> pd.DataFrame:
+    def retrieve(self, ticker: str, item_keys: Sequence[str]) -> pd.DataFrame:
         ...
